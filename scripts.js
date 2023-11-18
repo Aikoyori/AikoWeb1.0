@@ -72,68 +72,19 @@ function load() {
         default:
             alert('404');
 
-
     };
     checkColorTheme();
 
     try { document.getElementById('theme-button').addEventListener('click', toggleColorTheme); } catch{ }
     try { document.getElementById('notepad-button').addEventListener('click', function () { window.location = '/notepad/' }); } catch{ }
     try { document.getElementById('notepad-link').addEventListener('click', function () { window.location = '/notepad/' }); } catch{ }
+    try { document.getElementById('new-site-link').addEventListener('click', function () { window.location = 'https://aikoyori.xyz/' }); } catch{ }
     try { document.getElementById('home-button').addEventListener('click', function () { window.location = '/'; }); } catch{ }
-    try { document.getElementById('discord-button').addEventListener('click', function () { window.location = 'https://dc.qwty.cc/'; }); } catch{ }
-    try {
-        document.getElementById('navbar').addEventListener('mouseover', function () {
-            hovAnim();
-        });
-    } catch{ }
-    var stuffs = ['#theme-button', '#home-button', '#notepad-button'];
-    try {
-        document.getElementById('navbar').addEventListener('mouseout', function () {
-            defAnim();
-            for (var x = 0; x < stuffs.length; x++) {
-                try {
-                    console.log(document.getElementById(stuffs[x]));
-                    document.getElementById(stuffs[x]).addEventListener('mouseout', function () {
-                        defAnim();
-                    });
-
-                }
-                catch{ }
-            }
-        });
-    } catch{ }
-
-
+    try { document.getElementById('new-site-button').addEventListener('click', function () { window.location = 'https://aikoyori.xyz/'; }); } catch{ }
 
     bigTryCatch();
     var write = document.getElementById('head');
-    defAnim();
-}
 
-
-function bigTryCatch() {
-    console.log('ok');
-
-}
-function defAnim() {
-    anime({
-        autoplay: true,
-        targets: '#navbar',
-        translateY: -32,
-        delay: 0,
-        duration:10,
-        easing:'linear'
-    });  
-
-}
-function hovAnim() {
-    anime({
-        targets: '#navbar',
-        translateY: 0,
-        delay: 0,
-        duration:10,
-        easing:'linear'
-    });    
 }
 
 load();

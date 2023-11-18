@@ -3,6 +3,7 @@ html
 {
     font-family: monospace!important;
     overflow: hidden;
+    font-size: 1rem;
 }
 h1, h2 {
     display: inline;
@@ -15,13 +16,13 @@ massive
 {
     background-color: #073642;
     color:#93a1a1;
-    transition: all 0.5s cubic-bezier(1,0,0,1);
+    transition: all 0.5s cubic-bezier(0.91, -0.11, 0.05, 1.24);
 }
 .light
 {
     color:#586e75;
     background-color: #eee8d5;
-    transition: all 0.5s cubic-bezier(1,0,0,1);
+    transition: all 0.5s cubic-bezier(0.91, -0.11, 0.05, 1.24);
 }
 #navbar
 {
@@ -31,8 +32,9 @@ massive
     max-width: 100%;
     margin: 0%;
     padding: 20px;
-    z-index: 1;
+    z-index: 10;
     border-radius: 5px;
+    transform: translateY(-40px);
 }
 #navbar.light
 {
@@ -48,13 +50,10 @@ massive
     color: #fdf6e3;
 
 }
-#navbar::hover
+#navbar:hover
 {
-    background-color: #eee8d500;
-
+    transform: translateY(0px);
 }   
-
-
 
 /*
 #navbar-compensator
@@ -78,6 +77,7 @@ massive
     -moz-user-select: none;
     padding: 10px;
     border-radius: 5px;
+    cursor: pointer;
 
     border: solid 1px;
     transition: all 0s!important;
@@ -125,9 +125,23 @@ button
     user-select: none;
     -moz-user-select: none;
     cursor:hand;
+    cursor: pointer;
     color:	#dc322f;
 }
 #notepad-link:hover
+{
+
+    border-bottom: solid 1px;
+}
+#new-site-link
+{
+    user-select: none;
+    -moz-user-select: none;
+    cursor:hand;
+    cursor: pointer;
+    color:	#dc322f;
+}
+#new-site-link:hover
 {
 
     border-bottom: solid 1px;
@@ -139,8 +153,6 @@ button
     cursor:hand;
 }
 
-
-
 textarea
 {
     color:inherit;
@@ -150,12 +162,13 @@ textarea
     right:0px;      
     margin-left: 10px;
     /*margin-top: 40px;*/
-    
+    font-size: 1rem;
     resize: none;
     background: rgba(0, 0, 0, 0);
     border: none;
     min-height: 100%;
     outline: 0;
+    height:90vh
 }
 
 #web-content
@@ -176,6 +189,7 @@ span.content:before{
     counter-increment: line;
     content: counter(line);
     width:2em;
+    z-index: -2;
     display: inline-block;
     margin-left:0 .5em;
     margin-right: .5em;
